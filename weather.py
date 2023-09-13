@@ -3,8 +3,8 @@ import urllib.parse
 import datetime  # Import the datetime module to work with dates
 
 # Set your API keys
-openweather_api_key = 'a58e192b86ea2b71149efd9f6caf4543'
-geocoding_api_key = 'AIzaSyCNd-swzxbAzOYvraT6PR8iVewlVIgzalE'
+openweather_api_key = 'API KEY HERE'
+geocoding_api_key = 'API KEY HERE'
 
 # Function to get latitude and longitude coordinates for a given location (city or zip code)
 def get_coordinates(location):
