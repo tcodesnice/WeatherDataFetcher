@@ -3,8 +3,8 @@ import urllib.parse
 import datetime  # Import the datetime module to work with dates
 
 # Set your API keys
-openweather_api_key = 'API KEY HERE'
-geocoding_api_key = 'API KEY HERE'
+openweather_api_key = 'ENTER API KEY'
+geocoding_api_key = 'ENTER API KEY'
 
 # Function to get latitude and longitude coordinates for a given location (city or zip code)
 def get_coordinates(location):
@@ -39,8 +39,11 @@ try:
     encoded_date = urllib.parse.quote(date)
     encoded_api_key = urllib.parse.quote(openweather_api_key)
 
+    # Modify units to 'imperial' for Fahrenheit
+    units = 'imperial'
+    
     # Construct the OpenWeatherMap API request URL with encoded parameters
-    weather_url = f"https://api.openweathermap.org/data/3.0/onecall/day_summary?lat={encoded_lat}&lon={encoded_lon}&date={encoded_date}&appid={encoded_api_key}"
+    weather_url = f"https://api.openweathermap.org/data/3.0/onecall/day_summary?lat={encoded_lat}&lon={encoded_lon}&date={encoded_date}&appid={encoded_api_key}&units={units}"
 
     # Make the OpenWeatherMap API request and handle the response
     response = requests.get(weather_url)
